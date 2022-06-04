@@ -1,0 +1,115 @@
+@function multiple-box-shadow ($n) {
+    $value: '#{random(2000)}px #{random(2000)}px #FFF';
+    @for $i from 2 through $n {
+        $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    }
+    @return unquote($value);
+}
+
+$shadows-small:  multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big:    multiple-box-shadow(100);
+    
+#stars {
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+    animation: animStar2 50s linear infinite;
+    z-index: -1;
+    
+    &:after {
+        content: " ";
+        position: absolute;
+        top: 2000px;
+        width: 1px;
+        height: 1px;
+        background: transparent;
+        box-shadow: $shadows-small;
+        z-index: -1;
+    }
+}
+    
+#stars2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar3 100s linear infinite;
+  z-index: -1;
+    
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+    z-index: -1;
+  }
+} 
+
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+  position: relative;
+  z-index: -1;
+    
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+    z-index: -1;
+  }
+}
+
+#title {
+  position: absolute;
+  height: 85vh;
+  top: 11.5%;
+  left: 0;
+  right: 0;
+  
+  margin-top: -60px;
+} 
+
+span {
+    background: -webkit-linear-gradient(white, #38495a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes animStar {
+  from {  
+    transform: translateY(0px);
+  }
+  to {    
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes animStar2 {
+  from {  
+    transform: translateX(0px);
+  }
+  to {    
+    transform: translateX(-1000px);
+  }
+}
+
+@keyframes animStar3 {
+  from {  
+    transform: translateX(-1000px);
+  }
+  to {    
+    transform: translateX(0px);
+  }
+}

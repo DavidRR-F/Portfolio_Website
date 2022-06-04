@@ -1,0 +1,47 @@
+%heading {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: 'lato',sans-serif;
+    font-weight: 300;
+    letter-spacing: 10px;
+}
+
+.header {
+    @extend %heading;
+    font-size: 5rem;
+
+    &__primary {
+        @extend %heading;
+        font-size: 5rem;
+    }
+
+    &__secondary {
+        @extend %heading;
+        font-size: 3rem;
+    }
+
+    &__tertiary {
+        @extend %heading;
+        font-size: 2rem;
+    }
+
+    &__text {
+        @extend %heading;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+.svg {
+    font-size: 2rem;
+    fill: var(--color-secondary);
+    padding: .1rem;
+    margin: .5rem;
+    filter: drop-shadow(0 .2rem 1rem var(--color-secondary-shadow));
+    transition: filter .5s linear;
+    cursor: pointer;
+
+    &:hover {
+        filter: drop-shadow(0 .2rem 1.5rem var(--color-secondary-shadow-hover));
+    }
+}

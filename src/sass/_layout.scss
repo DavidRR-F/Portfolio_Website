@@ -1,0 +1,26 @@
+.grid {
+    display: grid;
+    grid-template-rows: 5vh 85vh 10vh;
+
+    &__nav{
+        @include centered-flex;
+        background-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-primary-2), var(--shadow-primary);
+        position: relative;
+        z-index: 1;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+    &__footer {
+        @include centered-flex;
+        flex-direction: column;
+        z-index: 1;
+    }
+}
+
+app-navigation {
+    height: 100%;
+}

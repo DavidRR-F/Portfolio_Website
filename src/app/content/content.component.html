@@ -1,0 +1,10 @@
+<!-- style="animation: animStar2 5s linear infinite;" -->
+<div id="stars" 
+[ngStyle]="{'animation': routing ? 'animStar2 5s linear infinite' : 'animation: animStar2 50s linear infinite'}"></div>
+<div id="stars2"></div>
+<div id="stars3"></div>
+<div id='title'>
+    <main [@routeAnimations]="prepareRoute()" class="content">
+        <router-outlet></router-outlet>
+    </main>
+</div>

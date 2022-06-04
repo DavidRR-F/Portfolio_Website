@@ -1,0 +1,41 @@
+@import '../../sass/styles.scss';
+
+.menu {
+    @include centered-flex;
+    height: 100%;
+
+    &__item {
+        @include centered-flex;
+        font-size: 1.8rem;
+        font-weight: 500;
+        height: 100%;
+        margin: 0 2rem;
+        cursor: pointer;
+        position: relative;
+        
+        &::after {
+            content: '';
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-secondary);
+            border-radius: 2px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s ease;
+        }
+        &:hover {
+            color: var(--color-secondary);
+            transition: color .5s ease;
+        }
+        &:hover::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.active {
+    color: var(--color-secondary);
+}

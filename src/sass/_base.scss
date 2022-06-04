@@ -1,0 +1,66 @@
+:root {
+    --color-primary: rgba(2, 133, 133, 0.529);
+    --color-primary-light: rgba(0, 227, 227, 0.363);
+    --color-primary-dark: rgb(24, 34, 34);
+
+    --color-secondary: #4dbade;
+    --color-secondary-light: #3857e3;
+    --color-secondary-dark: #20207e;
+    --color-secondary-shadow: rgb(77, 186, 222, .45);
+    --color-secondary-shadow-hover: rgb(77, 186, 222, .8);
+
+    --color-off-white: rgb(226, 226, 226);
+
+    --color-grey-light-1: #dedede;
+    --color-grey-light-2: #b7b7b7;
+    --color-grey-light-3: #a7a7a7;
+    --color-grey-light-4: rgba(232, 232, 232, 0.5);
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 5rem 10rem rgba(0, 0, 0, 0.5);
+    --shadow-light: 0 2rem 5rem rgba(0,0,0, .1);
+    --shadow-primary: 0 2rem 16rem rgba(71, 223, 247, .8);
+    --shadow-primary-2: 0 2rem 14rem rgba(71, 223, 247, 1);
+    --line: 1px solid var(--color-grey-light-2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+    @media only screen and (max-width: $bp-large) {
+        font-size: 50%; // 1rem = 8px
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-grey-light-4);
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 10rem;
+}
