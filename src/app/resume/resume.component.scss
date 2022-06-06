@@ -1,22 +1,8 @@
 @import '../../sass/styles.scss';
 
-.resume-grid {
-    display: grid;
-    grid-template-rows: repeat(2, 42.5vh);
-    grid-template-columns: repeat(2, 50%);
-
+.resume {
+    margin-top: 13vw;
     &__skills {
-        grid-area: 1 / 1 / 2 / -1;
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__education {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__employ {
         display: flex;
         flex-direction: column;
     }
@@ -25,7 +11,7 @@
 
 .skills {
     display: flex;
-    justify-content:space-around;
+    justify-content:space-evenly;
     flex-wrap: wrap;
 
     &__list {

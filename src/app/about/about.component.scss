@@ -1,0 +1,67 @@
+@import '../../sass/styles.scss';
+
+.about-container {
+    @include centered-flex;
+    margin-top: 15vw;
+}
+
+.about {
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 0 3rem;
+    padding-left: 9rem;
+    font-size: 1rem;
+
+    &__shape {
+        width: 30rem;
+        height: 30rem;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        // make element a circle
+        @supports (clip-path: circle(50% at 50% 50%)) or (-webkit-clip-path: circle(50% at 50% 50%)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            // shape text around circle shape
+            // only works if element is floated and have defined dimentions
+            --webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        backface-visibility: hidden;
+        transition: all .5s;
+    }
+
+    &__text {
+        backface-visibility: hidden;
+    }
+
+    &__caption {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, 0);
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        color: white;
+        opacity: 0;
+        transition: all .5s;
+        backface-visibility: hidden;
+    }
+
+    &__header {
+        font-size: 3rem;
+    }
+
+    &__body {
+        font-size: 2rem;
+    }
+}
+
