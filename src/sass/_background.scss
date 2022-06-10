@@ -6,58 +6,58 @@
     @return unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big:    multiple-box-shadow(100);
+$shadows-small:  multiple-box-shadow(1400);
+$shadows-medium: multiple-box-shadow(400);
+$shadows-big:    multiple-box-shadow(200);
+
+@mixin stars {
+    border-radius: 50%;
+    background: transparent;
+    z-index: -1;
+}
     
-#stars {
+.stars {
     width: 1px;
     height: 1px;
-    background: transparent;
     box-shadow: $shadows-small;
-    animation: animStar2 50s linear infinite;
-    z-index: -1;
+    animation: animStar-left 200s linear infinite;
+    @include stars;
     
     &:after {
         content: " ";
         position: absolute;
-        top: 2000px;
+        left: 2000px;
         width: 1px;
         height: 1px;
-        background: transparent;
         box-shadow: $shadows-small;
-        z-index: -1;
+        @include stars;
     }
 }
     
-#stars2 {
+.stars2 {
   width: 2px;
   height: 2px;
-  background: transparent;
+  @include stars;
   box-shadow: $shadows-medium;
-  animation: animStar3 100s linear infinite;
-  z-index: -1;
+  animation: animStar-right 220s linear infinite;
     
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    right: 2000px;
     width: 2px;
     height: 2px;
-    background: transparent;
     box-shadow: $shadows-medium;
-    z-index: -1;
+    @include stars;
   }
 } 
 
-#stars3 {
+.stars3 {
   width: 3px;
   height: 3px;
-  background: transparent;
+  @include stars;
   box-shadow: $shadows-big;
-  animation: animStar 200s linear infinite;
-  position: relative;
-  z-index: -1;
+  animation: animStar-up 270s linear infinite;
     
   &:after {
     content: " ";
@@ -65,13 +65,12 @@ $shadows-big:    multiple-box-shadow(100);
     top: 2000px;
     width: 3px;
     height: 3px;
-    background: transparent;
     box-shadow: $shadows-big;
-    z-index: -1;
+    @include stars;
   }
 }
 
-#title {
+.content-container {
   position: absolute;
   height: 85vh;
   top: 11.5%;
@@ -87,29 +86,21 @@ span {
     -webkit-text-fill-color: transparent;
 }
 
-@keyframes animStar {
-  from {  
-    transform: translateY(0px);
-  }
+
+@keyframes animStar-up {
   to {    
     transform: translateY(-2000px);
   }
 }
 
-@keyframes animStar2 {
-  from {  
-    transform: translateX(0px);
-  }
+@keyframes animStar-left {
   to {    
-    transform: translateX(-500px);
+    transform: translateX(-2000px);
   }
 }
 
-@keyframes animStar3 {
-  from {  
-    transform: translateX(-500px);
-  }
-  to {    
-    transform: translateX(0px);
+@keyframes animStar-right {
+  to {
+    transform: translateX(2000px);
   }
 }
