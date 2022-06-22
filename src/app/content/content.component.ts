@@ -39,6 +39,7 @@ export class ContentComponent implements OnInit {
 
   animate() {
     gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(CustomEase);
     gsap.to('.spaceship', {
       duration: 4, 
       ease: CustomEase.create("custom", "M0,0 C0.378,0.35 0.359,0.439 0.484,0.566 0.774,0.862 0.81,0.764 1,1 "),

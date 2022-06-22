@@ -1,0 +1,7 @@
+@import '../../sass/styles.scss';
+
+.container {
+    @include centered-flex;
+    flex-direction: column;
+    margin-top: 30rem;
+}
